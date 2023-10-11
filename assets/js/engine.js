@@ -12,8 +12,9 @@ const state = {
     },
     values:{
         timerId: null,
+        timerLeftId: null,
         contador: 0,
-        curretTime: 3,
+        curretTime: 60,
     },
 };
 
@@ -23,8 +24,12 @@ function curretDown(){
     state.values.curretTime--;
     state.view.time.innerHTML = state.values.curretTime; 
     
-    if(state.values.curretTime <= 0  || state.values.contador < 0){
-        init = () => {return;}
+    if(state.values.curretTime <= 0){
+        clearInterval(state.values.timerId);
+        clearInterval(state.values.timerLeftId);
+        state.view.score.innerHTML = '0';
+        state.values.curretTime = 0;
+        state.view.time.innerHTML = state.values.curretTime;
         gameOver()
     }
 }
@@ -45,28 +50,27 @@ function randomSquare(){
     randomSquare.classList.add("enemy");
 }
 
-function moveSquare(){
+let moveSquare = () => {
     state.values.timerId = setInterval(randomSquare, 600)
 }
 
-function addListenerHitBox(){
+
+
+let addListenerHitBox = () => {
     state.view.squares.forEach((square) => {
-        square.addEventListener('click', () => {
+        square.addEventListener('click', function renderScore(){
             console.log(square);
             if(square.classList == "square enemy"){
                 state.values.contador++
                 state.view.score.innerHTML = state.values.contador;
                 playSound();
-            }else if(square.classList == "square"){
-                state.values.contador--
-                state.view.score.innerHTML = state.values.contador;
             }
         })
     })
 };
 
-function curretDownTimerId(){
-    state.values.timerId= setInterval(curretDown, 1000)
+let = curretDownTimerId = () => {
+    state.values.timerLeftId = setInterval(curretDown, 1000);
 }
 
 
@@ -87,26 +91,29 @@ function startGame(){
 
 function reiniciarGame(){
     state.view.startBtnGameOver.addEventListener("click", () => {
+        state.values.contador = 0;
+        state.values.curretTime = 60;
+        state.view.score.innerHTML = state.values.contador;
         console.log('clickei');
-        init = () => {
-            moveSquare()
-            addListenerHitBox()
-            curretDownTimerId()
-        };
-        init();
         state.view.gameOverTela.style.display = 'none';
     })
 }
 
 function gameOver() {
-    init = () => {null}
-
+    addListenerHitBox = () => {return;}
+    curretDownTimerId = () => {return;}
+    moveSquare = () => {return;}
     reiniciarGame();
-
-    clearInterval(state.values.timerId);
-
+    curretDownTimerId = () => {state.values.timerLeftId = setInterval(curretDown, 1000);}
+    moveSquare = () => {state.values.timerId = setInterval(randomSquare, 600)}
+    init = () => {
+        moveSquare()
+        addListenerHitBox()
+        curretDownTimerId()
+    };
+    init();
     state.view.gameOverTela.style.display = 'flex';
-    state.view.scoreFinal.innerHTML = state.values.contador;
+    state.view.scoreFinal.innerHTML = 'O seu score foi: ' + state.values.contador;
 }
 
 startGame()
