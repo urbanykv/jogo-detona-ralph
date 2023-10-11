@@ -59,11 +59,10 @@ let moveSquare = () => {
 let addListenerHitBox = () => {
     state.view.squares.forEach((square) => {
         square.addEventListener('click', function renderScore(){
-            console.log(square);
             if(square.classList == "square enemy"){
+                playSound();
                 state.values.contador++
                 state.view.score.innerHTML = state.values.contador;
-                playSound();
             }
         })
     })
