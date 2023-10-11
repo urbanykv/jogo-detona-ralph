@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.jpg" type="image/x-icon">
+    <title>Detona Ralph</title>
+</head>
+<body>
+    <main class="container">
+        <div class="start">
+            <h1>Bem vindo(a) ao jogo do Detona Ralph</h1>
+            <p>Clique abaixo para começar</p>
+            <button class="botaoStart">Start!</button>
+        </div>
+        <div class="gameOver">
+            <p class="score-final"></p>
+            <button class="botaoStart btnGoverStart">Start!</button>
+        </div>
+        <div class="menu">
+            <div class="menu-time">
+                <h2 style="color: red;">Time Left</h2>
+                <h2 id="time">0</h2>
+            </div>
+            <div class="menu-score">
+                <h2 style="color: red;">Your Score</h2>
+                <h2 id="score">0</h2>
+            </div>
+            <div class="menu-lives">
+                <img src="./assets/img/player.png" alt="player" />
+                <h2>x3</h2>
+            </div>
+        </div>
+        <div class="jogo">
+            <div class="panel">
+                <div class="panel-row">
+                    <div class="square" id="1"></div>
+                    <div class="square" id="2"></div>
+                    <div class="square" id="3"></div>
+                </div>
+                <div class="panel-row">
+                    <div class="square" id="4"></div>
+                    <div class="square" id="5"></div>
+                    <div class="square" id="6"></div>
+                </div>
+                <div class="panel-row">
+                    <div class="square" id="7"></div>
+                    <div class="square" id="8"></div>
+                    <div class="square" id="9"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script defer src="./assets/js/engine.js"></script>
+</body>
+</html>

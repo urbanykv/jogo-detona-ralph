@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap');
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background-color: #000000a8;
+    padding: 50px;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.start h1{
+    width: 70%;
+    color: red;
+    font-size: 23px;
+    text-align: center;
+}
+
+.gameOver{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background-color: #000000a8;
+    padding: 50px;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.botaoStart{
+    background-color: #ffd700;
+    padding: 5px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 3px solid rgb(216, 184, 0);
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 3px solid gold;
+}
+
+.menu-score,
+.menu-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+}
+
+.menu-lives{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+}
+
+.menu-lives img{
+    width: 70px;
+}
+
+.jogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a8a8a;
+    background-image: url(../img/wall.png);
+    background-position: center;
+    height: 100%;
+}
+
+.panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.square{
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    background-color: #7fffd4;
+}
+
+.enemy{
+    background-image: url(../img/ralph.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
