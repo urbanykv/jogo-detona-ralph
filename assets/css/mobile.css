@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap');
+@media (max-width: 667px) {
 
 .container{
     display: flex;
@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 60%;
+    width: 90%;
     height: 73%;
     background-color: #000000e3;
     padding: 50px;
@@ -25,18 +25,19 @@
 }
 
 .start h1{
-    width: 70%;
+    width: 100%;
     color: red;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
 }
 
 .start img{
-    width: 40%;
+    width: 70%;
     margin: -50px;
 }
 
 .start p, .gameOver p{
+    font-size: 12px;
     width: 70%;
     color: red;
     text-align: center;
@@ -97,7 +98,7 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .jogo{
@@ -116,11 +117,13 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 80%;
+    height: 50%;
 }
 
 .square{
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     border: 2px solid black;
     background-color: #7fffd4;
 }
@@ -129,4 +132,5 @@
     background-image: url(../img/ralph.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
 }
