@@ -16,8 +16,8 @@
     align-items: center;
     position: absolute;
     width: 60%;
-    height: 73%;
-    background-color: #000000e3;
+    height: 90%;
+    background-color: #000000dc;
     padding: 50px;
     border-radius: 15px;
     flex-direction: column;
@@ -71,12 +71,51 @@
 
 .botaoStart{
     background-color: #ffd700;
-    padding: 5px;
+    padding: 10px;
     width: 150px;
     height: 40px;
     border-radius: 5px;
     border: 3px solid rgb(216, 184, 0);
     cursor: pointer;
+}
+
+.dificuldade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 120%
+}
+
+.botoes-dificuldade{
+    display: flex;
+    gap: 15px;
+}
+
+.botaoDificuldade{
+    padding: 3px;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.easy{
+    background-color: #09ff00;
+    border-radius: 5px;
+    border: 3px solid rgb(6, 167, 0);
+}
+
+.medium{
+    background-color: #fbff00;
+    border: 3px solid rgb(167, 156, 0);
+}
+
+.hard{
+    background-color: #ff0000;
+    border: 3px solid rgb(167, 0, 0);
 }
 
 .menu{

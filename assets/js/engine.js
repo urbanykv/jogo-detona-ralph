@@ -8,17 +8,37 @@ const state = {
         startBtn: document.querySelector(".botaoStart"),
         gameOverTela: document.querySelector(".gameOver"),
         startBtnGameOver: document.querySelector(".btnGoverStart"),
-        scoreFinal: document.querySelector(".score-final")
+        scoreFinal: document.querySelector(".score-final"),
+        easyButton: document.querySelector(".easy"),
+        mediumButton: document.querySelector(".medium"),
+        hardButton: document.querySelector(".hard"),
+        textoDificuldade: document.querySelector(".texto-dificuldade")
     },
     values:{
         timerId: null,
         timerLeftId: null,
         contador: 0,
         curretTime: 60,
+        velocidadeEnemy: 650
     },
 };
 
 let init = () => {}
+
+state.view.easyButton.addEventListener('click', () => {
+    state.view.textoDificuldade.innerHTML = "Dificuldade escolhida: fácil"
+    state.values.velocidadeEnemy = 1000;
+})
+
+state.view.mediumButton.addEventListener('click', () => {
+    state.view.textoDificuldade.innerHTML = "Dificuldade escolhida: médio"
+    state.values.velocidadeEnemy = 650;
+})
+
+state.view.hardButton.addEventListener('click', () => {
+    state.view.textoDificuldade.innerHTML = "Dificuldade escolhida: difícil"
+    state.values.velocidadeEnemy = 550;
+})
 
 function curretDown(){
     state.values.curretTime--;
@@ -51,7 +71,7 @@ function randomSquare(){
 }
 
 let moveSquare = () => {
-    state.values.timerId = setInterval(randomSquare, 600)
+    state.values.timerId = setInterval(randomSquare, state.values.velocidadeEnemy)
 }
 
 
